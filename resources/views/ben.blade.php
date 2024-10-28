@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="DITT Team">
-    <title>Gestion des Services</title>
+    <title>Gestion des Services de la DITT</title>
 
     <link rel="shortcut icon" type="image/jpg" href="{{ asset('images/ditt.jpg') }}">
 
@@ -46,13 +46,14 @@
             background: white;
             border-radius: 5px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            margin: 20px;
-            padding: 20px;
+            margin: 10px;
+            padding: 15px;
+            width: 200px;
             text-align: center;
             transition: transform 0.2s;
         }
         .card img {
-            width: 100%;
+            width: 95%;
             border-radius: 5px;
             height: auto;
         }
@@ -72,6 +73,10 @@
             color: grey ; /* Couleur gris pour le titre */
             text-align: center;
         }
+        .large-image {
+            width: 100% !important; /* Augmente la largeur de l'image à 100% du conteneur */
+            height: auto !important;
+        }
     </style>
 </head>
 <body>
@@ -83,7 +88,7 @@
 <nav>
     <a class="{{ request()->is('sous-directions') ? 'active' : '' }}" href="{{ url('sous-directions') }}">Sous-directions</a>
     <a class="{{ request()->is('agents') ? 'active' : '' }}" href="{{ url('agents') }}">Agents</a>
-    <a class="{{ request()->is('services') ? 'active' : '' }}" href="{{ url('services') }}">Services</a>
+   
     <a class="{{ request()->is('pointages') ? 'active' : '' }}" href="{{ url('pointages') }}">Pointages</a>
     <a class="{{ request()->is('utilisateurs') ? 'active' : '' }}" href="{{ url('utilisateurs') }}">Utilisateurs</a>
 </nav>
@@ -94,33 +99,33 @@
     <div class="card">
     <img src="{{ asset('images/cc.png') }}" alt="Service 1" style="width: 65%; height: auto;">
     <h3>PLCC</h3>
-    <p>Description du Service 1.</p>
+    <p>Plateforme de lutte contre la cyber criminalité</p>
     <a href="{{ route('service1') }}">Accéder</a>
 </div>
         <div class="card">
             <img src="{{ asset('images/bb.png') }}" alt="Service 2">
             <h3>E-COMPLAINT</h3>
-            <p>Description du Service 2.</p>
+            <p>Service d'enregistrement des plaintes en ligne</p>
             <a href="{{ route('service2') }}">Accéder</a>
         </div>
         <div class="card">
-            <img src="{{ asset('images/c.png') }}" alt="Service 3">
+            <img src="{{ asset('images/ccoo.png') }}" alt="Service 3" class="large-image">
             <h3>CCO</h3>
-            <p>Description du Service 3.</p>
+            <p>Poste de commendement des controles  visuels</p>
             <a href="{{ route('service3') }}">Accéder</a>
         </div>
         <div class="card">
             <img src="{{ asset('images/dd.png') }}" alt="Service 4">
             <h3>DCTT</h3>
-            <p>Description du Service 4.</p>
+            <p>Service de gestion des mégadonnées</p>
             <a href="{{ route('service4') }}">Accéder</a>
         </div>
     </div>
 </div>
 
-<footer style="background-color: transparent; border: none; padding: 20px;">
+<footer style="background-color: transparent; border: none; padding: 1px;">
     <div style="text-align: center;">
-        <img src="{{ asset('images/dittt.png') }}" width="50" height="50" alt="DITT Logo">
+        <img src="{{ asset('images/dittt.png') }}" width="30" height="30" alt="DITT Logo">
     </div>
     <p style="color: grey;">&copy; DITT 2019</p>
     <p style="color: grey;">{{ date('d/m/Y') }}</p>
